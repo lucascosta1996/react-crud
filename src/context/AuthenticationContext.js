@@ -4,7 +4,7 @@ export const AuthStateContext = createContext();
 export const AuthDispatchContext = createContext();
 
 const initialState = {
-  users: [
+  mockUsers: [
     {
       email: "root@root.com",
       password: "root"
@@ -22,7 +22,7 @@ function authReducer( state, action ) {
   switch( action.type ) {
     case "UPDATE_USER":
       return {
-        users: [ ...state.users, action.payload ]
+        mockUsers: [ ...state.mockUsers, action.payload ]
       }
     case "LOG_IN":
       localStorage.setItem( 'loggedIn', true );

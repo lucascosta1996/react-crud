@@ -6,13 +6,13 @@ import { LoginAction } from '../../actions/LoginActions'
 
 function LoginForm( ) {
   const { values, handleChange, handleSubmit } = useForm( handleLogin );
-  const { loggedIn, users } = useAuthState();
+  const { loggedIn, mockUsers } = useAuthState();
   const dispatch = useAuthDispatch();
 
   function handleLogin() {
     const { email, password } = values
 
-    const isUserValid = users.find(user =>
+    const isUserValid = mockUsers.find(user =>
       ( email === user.email && password === user.password )
     )
 
