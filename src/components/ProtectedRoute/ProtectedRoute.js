@@ -1,15 +1,17 @@
 import React, { memo } from 'react'
 import { Redirect } from 'react-router-dom'
 import { useAuthState } from '../../context/AuthenticationContext'
+import Dragons from '../Dragons/Dragons';
+import DragonsProvider from '../../context/DragonsContext';
 
 function ProtectedRoute() {
   const { loggedIn } = useAuthState()
 
   if ( loggedIn ) {
     return (
-      <div>
-        <span>Protected Route</span>
-      </div>
+      <DragonsProvider>
+        <Dragons />
+      </DragonsProvider>
     )
   } else {
     return <Redirect to="/login" />
