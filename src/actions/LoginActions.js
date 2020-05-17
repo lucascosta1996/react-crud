@@ -1,8 +1,4 @@
-import { useAuthDispatch } from '../context/AuthenticationContext';
-
-export const Login = ( email, password ) => {
-  const dispatch = useAuthDispatch();
-
+export const LoginAction = ( email, password, dispatch ) => {
   dispatch( {
     type: "LOG_IN",
     payload: {
